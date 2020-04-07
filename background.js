@@ -39,7 +39,7 @@ var settings = [
 ];       
         
 function onClickHandler(info, tab) {
-    var phoneNum = info.selectionText.replace(/[^+\d]+/g,'');
+    var phoneNum = info.selectionText.replace(/[^(){}_+-\d]+/g,''); // permite () {} _ + -
     
     var url = '';
     chrome.storage.local.get(settings, function(items) {
