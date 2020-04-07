@@ -8,7 +8,7 @@ document.addEventListener("mousedown", function(event){
     if( selection ) {
         var selLen = selection.match(/\d/g);
         //console.log(selLen);
-        if( selLen && (selLen.length == 7 || (selLen.length >= 10 && selLen.length <= 12))) {  //  123.4567 or 123.456.7890 or 1.123.456.7890 or 01.123.456.7890
+        if( selLen && (selLen.length >= 6 && selLen.length <= 15))) {  //  numeros de 6 a 15 digitos
             console.log("create_menu for "+selection);
             chrome.runtime.sendMessage({'action':'create_menu','selection':selection}, function(response) {
                  console.log(response);
